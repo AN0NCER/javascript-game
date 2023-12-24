@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/content/images/BG.png);
+}
+
+#pfarmer,
+#zombie,
+#death {
+    display: none;
+}
+
+.bgt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/content/images/TBG.png);
+    width: 1280px;
+    height: 720px;
+}
