@@ -35,7 +35,6 @@ export class Vector2 {
 }
 
 /**
- * 
  * @param {AreaColl} a 
  * @param {AreaColl} b 
  * @returns [boolea, ce, sumOfRadii, dx, dy]
@@ -46,4 +45,13 @@ export function CheckRadiusCollision(a, b) {
     const distance = Math.hypot(dy, dx);
     const sumOfRadii = a.radius + b.radius;
     return [(distance < sumOfRadii), distance, sumOfRadii, dx, dy];
+}
+
+/**
+ * @param {number} min 
+ * @param {number} max 
+ * @returns number
+ */
+export function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

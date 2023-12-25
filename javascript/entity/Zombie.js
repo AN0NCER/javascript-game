@@ -14,7 +14,6 @@ export class Zombie extends Entity {
         this.sprite = new Sprite(this.game, this.areaColl, this);
         this.canRotate = true;
         this.rotate = -1;
-        
     }
 
     /**

@@ -1,5 +1,6 @@
 import { Vector2 } from "../engine.js";
 import { Game } from "../game.js";
+import { Shotgun } from "../weapon/gun.js";
 import { Melee } from "../weapon/melee.js";
 import { AreaColl, Entity, Animation } from "./entity.js";
 
@@ -15,6 +16,7 @@ export class Fermer extends Entity {
 
         this.sprite = new Sprite(this.game, this.areaColl);
         this.melee = new Melee(this.game, this);
+        this.gun = new Shotgun(this.game, this);
     }
 
     /**
@@ -23,7 +25,12 @@ export class Fermer extends Entity {
     draw(context) {
         this.sprite.draw(context);
         this.melee.draw(context);
+        this.gun.draw(context);
         this.drawEngine(context);
+    }
+
+    update() {
+        this.gun.update()
     }
 }
 
@@ -50,7 +57,7 @@ class Sprite extends Animation {
             { id: 'reload', frameY: 4, countFrames: 22, staggerFrame: 14 }
         ];
         this.blockState = ['melee', 'fire', 'reload'];
-        this.blockReturns = ['reload'];
+        this.blockReturns = ['reload', 'fire'];
     }
 
     /**

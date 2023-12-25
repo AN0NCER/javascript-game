@@ -1,5 +1,6 @@
 import { InputGamepad } from "./Inputs/InputGamepad.js";
 import { InputKeyboard } from "./Inputs/InputKeyboard.js";
+import { InputMouse } from "./Inputs/InputMouse.js";
 import { GameEngine, Vector2 } from "./engine.js";
 import { Fermer } from "./entity/Fermer.js";
 import { Zombie } from "./entity/Zombie.js";
@@ -21,6 +22,8 @@ export class Game extends GameEngine {
 
         this.keys = [];
         this.keyboardInput = new InputKeyboard(this);
+        this.mouseInput = new InputMouse(this);
+        this.buttons = [];
     }
 
     init() {
@@ -39,7 +42,6 @@ export class Game extends GameEngine {
      * @param {number} deltaTime 
      */
     render(context, deltaTime) {
-        console.log(this.keys);
         if (this.timer > this.interval) {
             context.clearRect(0, 0, this.width, this.height);
             this.gameObjects.sort((a, b) => {
