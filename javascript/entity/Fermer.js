@@ -29,7 +29,7 @@ export class Fermer extends Entity {
         this.drawEngine(context);
     }
 
-    update(){
+    update() {
         this.gun.update()
     }
 }

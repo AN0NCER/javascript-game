@@ -19,7 +19,7 @@ export class GameEngine {
             if (this.debug) {
                 this.fps = Math.round((this.frameCount / elapsedTime) * 1000);
                 // Выводим FPS в консоль (или куда-то еще, например, на экран)
-                //console.log(`FPS: ${this.fps}`);
+                console.log(`FPS: ${this.fps}`);
             }
             this.frameCount = 0;
             this.lastTime = currentTime;

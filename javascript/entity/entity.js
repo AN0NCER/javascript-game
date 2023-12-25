@@ -1,4 +1,4 @@
-import { CheckRadiusCollision, GameEngine, Vector2 } from "../engine.js";
+import { GameEngine, Vector2 } from "../engine.js";
 import { Game } from "../game.js";
 
 export class AreaColl {

@@ -23,7 +23,7 @@ export class Game extends GameEngine {
         this.keys = [];
         this.keyboardInput = new InputKeyboard(this);
         this.mouseInput = new InputMouse(this);
-        this.buttons = []; // 'mousLeft', 'mouseRight'
+        this.buttons = [];
     }
 
     init() {
@@ -42,7 +42,6 @@ export class Game extends GameEngine {
      * @param {number} deltaTime 
      */
     render(context, deltaTime) {
-        console.log(this.buttons);
         if (this.timer > this.interval) {
             context.clearRect(0, 0, this.width, this.height);
             this.gameObjects.sort((a, b) => {

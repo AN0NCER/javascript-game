@@ -59,17 +59,18 @@ export class Player extends Entity {
                 this.entity.areaColl.position.x += speed;
             }
 
-            if(this.entity.gun){
-                if(this.game.buttons.indexOf('mousLeft') > -1){
-                    if(this.entity.gun.fire()){
+            if (this.entity.gun) {
+                if (this.game.buttons.indexOf('mousLeft') > -1) {
+                    if (this.entity.gun.fire()) {
                         this.entity.sprite.setState('fire');
-                    }else{
+                    } else {
                         this.entity.sprite.setState('reload');
                         this.entity.gun.reload();
                     }
                 }
-                if(this.game.keys.indexOf('reload') > -1){
+                if (this.game.keys.indexOf('reload') > -1) {
                     this.entity.sprite.setState('reload');
+                    this.entity.gun.reload();
                 }
             }
         }
